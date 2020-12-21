@@ -1,4 +1,4 @@
-# Bootstrap 5 WordPress navbar walker
+# Bootstrap 5 WordPress navbar walker menu
 [bootstrap-5-wordpress-navbar-walker](https://github.com/AlexWebLab/bootstrap-5-wordpress-navbar-walker)
 ## How to use:
 1. Copy and paste the [bootstrap_5_wp_nav_menu_walker](https://github.com/AlexWebLab/bootstrap-5-wordpress-navbar-walker/blob/main/functions.php) class into the functions.php file of your theme;
