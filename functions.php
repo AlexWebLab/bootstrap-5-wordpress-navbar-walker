@@ -2,15 +2,38 @@
 // bootstrap 5 wp_nav_menu walker
 class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu
 {
+  private $current_item;
+  private $dropdown_menu_alignment_values = [
+    'dropdown-menu-start',
+    'dropdown-menu-end',
+    'dropdown-menu-sm-start',
+    'dropdown-menu-sm-end',
+    'dropdown-menu-md-start',
+    'dropdown-menu-md-end',
+    'dropdown-menu-lg-start',
+    'dropdown-menu-lg-end',
+    'dropdown-menu-xl-start',
+    'dropdown-menu-xl-end',
+    'dropdown-menu-xxl-start',
+    'dropdown-menu-xxl-end'
+  ];
+
   function start_lvl(&$output, $depth = 0, $args = array())
   {
+    $dropdown_menu_class[] = '';
+    foreach($this->current_item->classes as $class) {
+      if(in_array($class, $this->dropdown_menu_alignment_values)) {
+        $dropdown_menu_class[] = $class;
+      }
+    }
     $indent = str_repeat("\t", $depth);
     $submenu = ($depth > 0) ? ' sub-menu' : '';
-    $output .= "\n$indent<ul class=\"dropdown-menu$submenu depth_$depth\">\n";
+    $output .= "\n$indent<ul class=\"dropdown-menu$submenu " . esc_attr(implode(" ",$dropdown_menu_class)) . " depth_$depth\">\n";
   }
 
   function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
   {
+    $this->current_item = $item;
 
     $indent = ($depth) ? str_repeat("\t", $depth) : '';
 
