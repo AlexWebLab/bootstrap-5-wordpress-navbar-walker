@@ -31,3 +31,7 @@ register_nav_menu('main-menu', 'Main menu');
     </div>
 </nav>
 ```
+### v1.3.0 Added support for dropdown menu (responsive) alignment: https://getbootstrap.com/docs/5.0/components/dropdowns/#menu-alignment
+
+**Here is how it works**:
+if one (or more) class(es) related to dropdown responsive alignment (for instance: dropdown-menu-sm-end) are detected inside the class list of the parent element, then they are copied into the class list of the .dropdown-menu element.
