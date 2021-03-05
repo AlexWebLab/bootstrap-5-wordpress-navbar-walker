@@ -34,4 +34,8 @@ register_nav_menu('main-menu', 'Main menu');
 ### v1.3.0 Added support for dropdown menu (responsive) alignment: https://getbootstrap.com/docs/5.0/components/dropdowns/#menu-alignment
 
 **Here is how it works**:
-if one (or more) class(es) related to dropdown responsive alignment (for instance: dropdown-menu-sm-end) are detected inside the class list of the parent element, then they are copied into the class list of the .dropdown-menu element.
+- From _Appearance -> Menus_ page of WordPress, check the _CSS Classes_ checkbox under _Screen Options_;
+- Add a _Custom Link_ with "#" in the URL field (this would be the parent of your dropdown);
+- On the _CSS Classes_ field add any of the following alignment classes: 'dropdown-menu-start', 'dropdown-menu-end', 'dropdown-menu-sm-start', 'dropdown-menu-sm-end', 'dropdown-menu-md-start', 'dropdown-menu-md-end', 'dropdown-menu-lg-start', 'dropdown-menu-lg-end', 'dropdown-menu-xl-start', 'dropdown-menu-xl-end', 'dropdown-menu-xxl-start', 'dropdown-menu-xxl-end';
+- If any of the mentioned above class is detected, then they will automatically copied into the _ul.dropdown-menu_ element following the Bootstrap 5 structure;
+- Any other class that is not related to the dropdown menu alignment will stay where it is.
