@@ -63,11 +63,11 @@ class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu
     $attributes .= !empty($item->url) ? ' href="' . esc_attr($item->url) . '"' : '';
 
     $active_class = ($item->current || $item->current_item_ancestor) ? 'active' : '';
-    $nav_link_class = ( $depth > 0 ) ? 'dropdown-item nav-link ' : 'nav-link ';
+    $nav_link_class = ( $depth > 0 ) ? 'dropdown-item ' : 'nav-link ';
     $attributes .= ( $args->walker->has_children ) ? ' class="'. $nav_link_class . $active_class . ' dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"' : ' class="'. $nav_link_class . $active_class . '"';
 
     $item_output = $args->before;
-    $item_output .= ($depth > 0) ? '<a' . $attributes . '>' : '<a' . $attributes . '>';
+    $item_output .= '<a' . $attributes . '>';
     $item_output .= $args->link_before . apply_filters('the_title', $item->title, $item->ID) . $args->link_after;
     $item_output .= '</a>';
     $item_output .= $args->after;
