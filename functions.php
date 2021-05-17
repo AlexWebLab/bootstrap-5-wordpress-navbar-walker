@@ -18,7 +18,7 @@ class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu
     'dropdown-menu-xxl-end'
   ];
 
-  function start_lvl(&$output, $depth = 0, $args = array())
+  function start_lvl(&$output, $depth = 0, $args = null)
   {
     $dropdown_menu_class[] = '';
     foreach($this->current_item->classes as $class) {
@@ -31,7 +31,7 @@ class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu
     $output .= "\n$indent<ul class=\"dropdown-menu$submenu " . esc_attr(implode(" ",$dropdown_menu_class)) . " depth_$depth\">\n";
   }
 
-  function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
+  function start_el(&$output, $item, $depth = 0, $args = null, $id = 0)
   {
     $this->current_item = $item;
 
