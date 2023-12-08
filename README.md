@@ -1,7 +1,12 @@
 # Bootstrap 5 WordPress navbar walker menu
 [bootstrap-5-wordpress-navbar-walker](https://github.com/AlexWebLab/bootstrap-5-wordpress-navbar-walker)
 ## How to use:
-1. Copy and paste the [bootstrap_5_wp_nav_menu_walker](https://github.com/AlexWebLab/bootstrap-5-wordpress-navbar-walker/blob/main/functions.php) class into the functions.php file of your theme;
+1. Copy and paste the [Bootstrap_5_Wp_Nav_Menu_Walker](class-bootstrap-5-wp-nav-menu-walker.php) class into the functions.php file of your theme;
+
+`OR`
+
+Download file [class-bootstrap-5-wp-nav-menu-walker.php](class-bootstrap-5-wp-nav-menu-walker.php) and include this file into the functions.php file of your theme;
+
 2. Register a new menu by adding the follow code into the functions.php file of your theme:
 ```php
 register_nav_menu('main-menu', 'Main menu');
@@ -24,7 +29,7 @@ register_nav_menu('main-menu', 'Main menu');
                 'fallback_cb' => '__return_false',
                 'items_wrap' => '<ul id="%1$s" class="navbar-nav me-auto mb-2 mb-md-0 %2$s">%3$s</ul>',
                 'depth' => 2,
-                'walker' => new bootstrap_5_wp_nav_menu_walker()
+                'walker' => new Bootstrap_5_Wp_Nav_Menu_Walker()
             ));
             ?>
         </div>
